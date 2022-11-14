@@ -4,6 +4,7 @@ import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
+import { Listings } from '../../api/listings/Listings';
 
 /**
  * In Bowfolios, insecure mode is enabled, so it is possible to update the server's Mongo database by making
@@ -28,6 +29,14 @@ import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
  * Note that it would be even better if each method was wrapped in a transaction so that the database would be rolled
  * back if any of the intermediate updates failed. Left as an exercise to the reader.
  */
+
+const addListingMethod = 'Listings.add';
+/** Creates a new project in the Projects collection, and also updates ProfilesProjects and ProjectsInterests. */
+Meteor.methods({
+  'Listings.add'({ itemName, image, description, condition, price, owner }) {
+    Listings.collection.insert({ itemName, image, description, condition, price, owner });
+  },
+});
 
 const updateProfileMethod = 'Profiles.update';
 
@@ -65,4 +74,6 @@ Meteor.methods({
   },
 });
 
-export { updateProfileMethod, addProjectMethod };
+
+
+export { updateProfileMethod, addProjectMethod, addListingMethod };

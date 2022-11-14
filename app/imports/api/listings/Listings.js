@@ -3,7 +3,7 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /** Encapsulates state and variable values for this collection. */
-class ItemsCollection {
+class ListingsCollection {
   constructor() {
     // The name of this collection.
     this.name = 'ItemsCollection';
@@ -16,7 +16,7 @@ class ItemsCollection {
       condition: { type: String, optional: false },
       description: { type: String, optional: false },
       price: { type: String, optional: false },
-      owner: { type: String, unique: false },
+      owner: { type: String },
     }, { tracker: Tracker });
     // Ensure collection documents obey schema.
     this.collection.attachSchema(this.schema);
@@ -26,4 +26,4 @@ class ItemsCollection {
   }
 }
 
-export const Items = new ItemsCollection();
+export const Listings = new ListingsCollection();

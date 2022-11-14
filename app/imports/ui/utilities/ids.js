@@ -19,6 +19,8 @@ export const ComponentIDs = {
   homeFormSubmit: 'homeFormSubmit',
   homeMenuItem: 'homeMenuItem',
   interestsMenuItem: 'interestsMenuItem',
+  listItemsMenuItem: 'listItemsMenuItem',
+  listItemsAddItem: 'listItemsAddItem',
   loginDropdown: 'loginDropdown',
   loginDropdownSignIn: 'loginDropdownSignIn',
   loginDropdownSignUp: 'loginDropdownSignUp',

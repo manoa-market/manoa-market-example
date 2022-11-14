@@ -29,8 +29,10 @@ const NavBar = () => {
             <Nav.Link as={NavLink} id={ComponentIDs.profilesMenuItem} to="/profiles" key="profiles">Profiles</Nav.Link>
             <Nav.Link as={NavLink} id={ComponentIDs.projectsMenuItem} to="/projects" key="projects">Projects</Nav.Link>
             <Nav.Link as={NavLink} id={ComponentIDs.interestsMenuItem} to="/interests" key="interests">Interests</Nav.Link>
+            <Nav.Link as={NavLink} id={ComponentIDs.listItemsMenuItem} to="/listlistings" key="listlistings">Item Listings</Nav.Link>
             {currentUser ? (
-              [<Nav.Link as={NavLink} id={ComponentIDs.addProjectMenuItem} to="/addProject" key="addP">Add Project</Nav.Link>,
+              [<Nav.Link as={NavLink} id={ComponentIDs.listItemsAddItem} to="/addlisting" key="addlisting">Add Listing</Nav.Link>,
+                <Nav.Link as={NavLink} id={ComponentIDs.addProjectMenuItem} to="/addProject" key="addP">Add Project</Nav.Link>,
                 <Nav.Link as={NavLink} id={ComponentIDs.filterMenuItem} to="/filter" key="filter">Filter</Nav.Link>]
             ) : ''}
           </Nav>
